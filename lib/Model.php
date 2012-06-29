@@ -8,7 +8,7 @@ class Model extends Base
     function Model() {
         include_once(LIB_DIR."MysqlDB.php");
         // 连接数据库
-        $this->db = new MysqlDB(DB_HOST,DB_UESR,DB_PWD,DB_NAME);
+        $this->db = new MysqlDB(DB_HOST.":".DB_PORT,DB_USER,DB_PWD,DB_NAME);
           
         if(empty($this->table)) die("miss table name");
     }
@@ -79,4 +79,3 @@ class Model extends Base
         return $this->db->fetchOne($sSql);
     }
 }
-?>

@@ -5,20 +5,20 @@
       <td>时间</td>
       <td>操作</td>
   </tr>
-  {foreach from=$data item=item}
+  <?php foreach($data as $key => $item): ?>
   <tr>
-      <td>{$item.id}</td>
-      <td>{$item.title}</td>
-      <td>{$item.add_time}</td>
+      <td><?php echo $item["message_id"];?></td>
+      <td><?php echo $item["title"];?></td>
+      <td><?php echo $item["add_time"];?></td>
       <td>
-         <a href="?ctl=message&act=edit&id={$item.id}">修改</a>
-         <a href="?ctl=message&act=delete&id={$item.id}">删除</a>
+         <a href="?ctl=message&act=edit&id=<?php echo $item["message_id"];?>">修改</a>
+         <a href="?ctl=message&act=delete&id=<?php echo $item["message_id"];?>">删除</a>
       </td>
   </tr>
-  {/foreach}
+  <?php endforeach; ?>
   
     <tr>
-      <td colspan="4">{$pager}</td>
+      <td colspan="4"><?php echo $pager;?></td>
     </tr>
   
 </table>

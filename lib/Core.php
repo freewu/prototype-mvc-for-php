@@ -9,8 +9,8 @@ class Core{
         include_once(LIB_DIR."Base.php");
         include_once(LIB_DIR."Controller.php");
         
-        $ctl = $_GET['ctl']? $_GET['ctl'] : 'Message';
-        $act = $_GET['act']? $_GET['act'] : 'index';
+        $ctl = isset($_GET['ctl'])? $_GET['ctl'] : 'Message';
+        $act = isset($_GET['act'])? $_GET['act'] : 'index';
         
         $ctl = ucwords(strtolower($ctl));
         $act = strtolower($act);
@@ -28,4 +28,3 @@ class Core{
         $obj_ctl->$act();
     }
 }
-?>
