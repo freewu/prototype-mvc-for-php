@@ -17,4 +17,3 @@ class PassportController extends Controller
         print_r($_POST);
     }
 }
-?>

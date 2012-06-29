@@ -8,7 +8,8 @@ class MessageController extends Controller
         $this->_oMessage = $this->getModel("message");
     }
     function index() {
-        $page = intval($_GET['page'])? intval($_GET['page']) : 1;
+        $page = isset($_GET['page'])? intval($_GET['page']) : 1;
+        $page = $page? $page : 1;
         $pagesize = 5;
         
         $aData = $this->_oMessage->getAll($page,$pagesize);
@@ -57,4 +58,3 @@ class MessageController extends Controller
         $this->message("删除失败");
     }
 }
-?>

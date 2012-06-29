@@ -31,8 +31,8 @@ class Page
     
     function _pager($num = 1) {
         $this->_params['page'] = $num? $num : 1;
-        $this->_params['ctl'] = $_REQUEST['ctl']? $_REQUEST['ctl'] : 'message';
-        $this->_params['act'] = $_REQUEST['act']? $_REQUEST['act'] : 'index';
+        $this->_params['ctl'] = isset($_REQUEST['ctl'])? $_REQUEST['ctl'] : 'message';
+        $this->_params['act'] = isset($_REQUEST['act'])? $_REQUEST['act'] : 'index';
         
         $arr_params = array();
         foreach($this->_params as $key=>$row) {
@@ -58,4 +58,3 @@ class Page
         return "<a href=".$this->_pager($num).">末页</a>";
     }
 }
-?>

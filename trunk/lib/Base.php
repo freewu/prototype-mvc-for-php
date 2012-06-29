@@ -20,5 +20,4 @@ class Base
         $this->_model[$model] = $obj_mdl;
         return $obj_mdl;
     }
-}
-?>
+} // end class

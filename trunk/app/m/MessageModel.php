@@ -20,4 +20,3 @@ class MessageModel extends Model{
         return $aData;
     }
 }
-?>
